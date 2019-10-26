@@ -9,13 +9,14 @@ gameWindow = pygame.display.set_mode((10*BLOCK_SIZE,10*BLOCK_SIZE))
 pygame.display.set_caption("Snake 1")
 
 
-exit_game = False
+exit_game = True
 game_over = False
 snake_x = 50
 snake_y = 50
 snake_size = 10
 
-while not exit_game:
+while exit_game==True:
+    pygame.time.delay(100)
     for event in pygame.event.get():
         
         if event.type == pygame.QUIT:
@@ -24,7 +25,7 @@ while not exit_game:
     
     
     gameWindow.fill(white)
-    pygame.draw.rect(gameWindow, red, [snake_x, snake_y,snake_size])
+    pygame.draw.rect(gameWindow, red, (snake_x, snake_y,snake_size,snake_size))
     pygame.display.update()  
     
         
